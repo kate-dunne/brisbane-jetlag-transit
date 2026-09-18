@@ -6,6 +6,8 @@ Mobile map of selected Brisbane transit routes and stops, with layer controls an
 
 Tap ☰ for layers and **Load Taibeled Export**. Tap routes or stops for details. Run locally with `python3 -m http.server 8000`, or serve the files through GitHub Pages.
 
+“Major interchanges / train stations” is a curated subset of the included stops: all included rail stations plus selected bus hubs. “All transit stops” is the complete included stop set. Both marker layers are filtered by the enabled service categories, so ferry-only stops disappear when Ferries is off, and train-only stops disappear when Trains is off.
+
 ## Sources
 
 - Transit geometry and stop coordinates: Translink SEQ GTFS, retained from the initial data package. Frequency groups describe Sunday daytime service and have not been independently revalidated; they are not live timetable information.
