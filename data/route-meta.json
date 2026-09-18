@@ -1,0 +1,446 @@
+{
+  "100": {
+    "route": "100",
+    "name": "Forest Lake/Inala - City",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "120": {
+    "route": "120",
+    "name": "Garden City - City via Tarragindi",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "125": {
+    "route": "125",
+    "name": "Garden City - City/Valley via Salisbury",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "130": {
+    "route": "130",
+    "name": "Parkinson - City",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "140": {
+    "route": "140",
+    "name": "Browns Plains - City Express via Mains Road",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "150": {
+    "route": "150",
+    "name": "Browns Plains - City Express via Runcorn",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "169": {
+    "route": "169",
+    "name": "Eight Mile Plains - UQ Lakes",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "175": {
+    "route": "175",
+    "name": "Garden City - City via Logan Rd",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "180": {
+    "route": "180",
+    "name": "Garden City - City Express via Mansfield",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "185": {
+    "route": "185",
+    "name": "Garden City - City/Valley",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "19": {
+    "route": "19",
+    "name": "Rocklea - PA Hospital StationLink",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "196": {
+    "route": "196",
+    "name": "Fairfield Gardens - Merthyr via City/Valley",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "199": {
+    "route": "199",
+    "name": "West End - Teneriffe Ferry via City/Valley",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "200": {
+    "route": "200",
+    "name": "Carindale Heights - City Express",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "204": {
+    "route": "204",
+    "name": "Carindale - City/Valley",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "222": {
+    "route": "222",
+    "name": "Carindale - City Express via Eastern Busway",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "30": {
+    "route": "30",
+    "name": "Spring Hill Loop",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "300": {
+    "route": "300",
+    "name": "Toombul - City via Hamilton",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "330": {
+    "route": "330",
+    "name": "Bracken Ridge - City Express",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "333": {
+    "route": "333",
+    "name": "Chermside - Woolloongabba via City",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "338": {
+    "route": "338",
+    "name": "City - Chermside",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "340": {
+    "route": "340",
+    "name": "Carseldine - Woolloongabba Express via City",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "345": {
+    "route": "345",
+    "name": "Aspley - City Express via Maundrell Terrace",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "348": {
+    "route": "348",
+    "name": "Stafford - City via Gordon Park",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "369": {
+    "route": "369",
+    "name": "Mitchelton - Toombul via Stafford",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "375": {
+    "route": "375",
+    "name": "Bardon - City",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "385": {
+    "route": "385",
+    "name": "The Gap - City Express",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "390": {
+    "route": "390",
+    "name": "Mitchelton - City",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "412": {
+    "route": "412",
+    "name": "University of Qld - City Express",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "444": {
+    "route": "444",
+    "name": "Moggill - City Express",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "555": {
+    "route": "555",
+    "name": "Brisbane City - Loganholme",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "590": {
+    "route": "590",
+    "name": "Garden City - Toombul via Carindale",
+    "category": "intermediate_bus",
+    "route_type": "3"
+  },
+  "60": {
+    "route": "60",
+    "name": "West End - Teneriffe Ferry via City/Valley",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "61": {
+    "route": "61",
+    "name": "Ashgrove Shops - Coorparoo via City",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "BDBR": {
+    "route": "BDBR",
+    "name": "Airport - Brisbane City",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRBD": {
+    "route": "BRBD",
+    "name": "Brisbane City - Airport",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRBR": {
+    "route": "BRBR",
+    "name": "Brisbane City - Brisbane City",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRCA": {
+    "route": "BRCA",
+    "name": "Brisbane City - Caboolture",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRCL": {
+    "route": "BRCL",
+    "name": "Brisbane City - Cleveland",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRDB": {
+    "route": "BRDB",
+    "name": "Brisbane City - Doomben",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRFG": {
+    "route": "BRFG",
+    "name": "Brisbane City - Ferny Grove",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRGY": {
+    "route": "BRGY",
+    "name": "Brisbane City - Gympie North",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRIP": {
+    "route": "BRIP",
+    "name": "Brisbane City - Ipswich",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRRP": {
+    "route": "BRRP",
+    "name": "Brisbane City - Redcliffe Peninsula",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRSH": {
+    "route": "BRSH",
+    "name": "Brisbane City - Shorncliffe",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "BRSP": {
+    "route": "BRSP",
+    "name": "Brisbane City - Springfield",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "CAIP": {
+    "route": "CAIP",
+    "name": "Caboolture - Ipswich",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "CASP": {
+    "route": "CASP",
+    "name": "Caboolture - Springfield",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "CLBR": {
+    "route": "CLBR",
+    "name": "Cleveland - Brisbane City",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "CLSH": {
+    "route": "CLSH",
+    "name": "Cleveland - Shorncliffe",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "DBBR": {
+    "route": "DBBR",
+    "name": "Doomben - Brisbane City",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "F1": {
+    "route": "F1",
+    "name": "Northshore Hamilton / UQ St Lucia",
+    "category": "ferry",
+    "route_type": "4"
+  },
+  "F21": {
+    "route": "F21",
+    "name": "Bulimba / Teneriffe",
+    "category": "ferry",
+    "route_type": "4"
+  },
+  "F22": {
+    "route": "F22",
+    "name": "Sydney Street / Dockside",
+    "category": "ferry",
+    "route_type": "4"
+  },
+  "F23": {
+    "route": "F23",
+    "name": "Holman Street / Riverside",
+    "category": "ferry",
+    "route_type": "4"
+  },
+  "F24": {
+    "route": "F24",
+    "name": "Maritime Museum / QUT Gardens Point",
+    "category": "ferry",
+    "route_type": "4"
+  },
+  "FGBR": {
+    "route": "FGBR",
+    "name": "Ferny Grove - Brisbane City",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "GYBR": {
+    "route": "GYBR",
+    "name": "Gympie North - Brisbane City",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "IPBR": {
+    "route": "IPBR",
+    "name": "Ipswich - Brisbane City",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "IPCA": {
+    "route": "IPCA",
+    "name": "Ipswich - Caboolture",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "IPNA": {
+    "route": "IPNA",
+    "name": "Ipswich - Nambour",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "IPRW": {
+    "route": "IPRW",
+    "name": "Ipswich - Rosewood",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "M1": {
+    "route": "M1",
+    "name": "Eight Mile Plains - City",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "M2": {
+    "route": "M2",
+    "name": "RBWH - UQ Lakes via City",
+    "category": "high_bus",
+    "route_type": "3"
+  },
+  "NAIP": {
+    "route": "NAIP",
+    "name": "Nambour - Ipswich",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "RPBR": {
+    "route": "RPBR",
+    "name": "Redcliffe Peninsula - Brisbane City",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "RPSP": {
+    "route": "RPSP",
+    "name": "Redcliffe Peninsula - Springfield",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "RWIP": {
+    "route": "RWIP",
+    "name": "Rosewood - Ipswich",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "SHBR": {
+    "route": "SHBR",
+    "name": "Shorncliffe - Brisbane City",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "SHCL": {
+    "route": "SHCL",
+    "name": "Shorncliffe - Cleveland",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "SHSH": {
+    "route": "SHSH",
+    "name": "Shorncliffe - Shorncliffe",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "SPCA": {
+    "route": "SPCA",
+    "name": "Springfield - Caboolture",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "SPNA": {
+    "route": "SPNA",
+    "name": "Springfield - Nambour",
+    "category": "rail",
+    "route_type": "2"
+  },
+  "SPRP": {
+    "route": "SPRP",
+    "name": "Springfield - Redcliffe Peninsula",
+    "category": "rail",
+    "route_type": "2"
+  }
+}
