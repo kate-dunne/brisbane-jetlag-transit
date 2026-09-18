@@ -36,6 +36,7 @@ function halfPlane(d,bbox) {
 }
 function parseTaibeled(j) {
   if(!j || typeof j!=='object')throw Error('Expected a Taibeled JSON export');
+  validateImportComplexity(j);
   const notes=[],unsupported=[];
   let area;
   if(['Polygon','MultiPolygon'].includes(j.geometry?.type)||j.type==='FeatureCollection') area=polygonUnion(j);
@@ -49,7 +50,7 @@ function parseTaibeled(j) {
   if(j.alternateLocations?.length)notes.push('Additional game boundaries are not applied');
   if(j.properties?.isHidingZone)notes.push('Station hiding-zone restrictions are not applied');
   const qs=j.properties?.questions??j.questions??[];
-  if(!Array.isArray(qs))throw Error('Invalid question list');
+  if(!Array.isArray(qs)||qs.length>100)throw Error('Expected at most 100 questions');
   let count=0;
   for(const q of qs) {
     const d=q?.data;if(!d)throw Error('Invalid question data');if(d.hidden)continue;
@@ -70,6 +71,10 @@ function clipTransit(data,area) {
     if(f.geometry.type==='Point'){if(turf.booleanPointInPolygon(f,poly))out.push(f);continue;}
     turf.flattenEach(f,line=>{
       if(line.geometry.type!=='LineString')return;
+      // GTFS shapes can repeat consecutive coordinates; zero-length segments break lineSplit.
+      const coords=line.geometry.coordinates.filter((c,i,a)=>i===0||c[0]!==a[i-1][0]||c[1]!==a[i-1][1]);
+      if(coords.length<2)return;
+      line=turf.lineString(coords,line.properties);
       const cuts=turf.lineSplit(line,poly);
       for(const part of cuts.features.length?cuts.features:[line]) {
         const mid=turf.along(part,turf.length(part)/2);
@@ -78,4 +83,19 @@ function clipTransit(data,area) {
     });
   }
   return turf.featureCollection(out);
+}
+
+// Bound work before calling geometry libraries on user-selected JSON.
+function validateImportComplexity(root) {
+  const pending=[[root,0]];let nodes=0;
+  while(pending.length){
+    const [value,depth]=pending.pop();
+    if(++nodes>50000||depth>32)throw Error('Export is too complex');
+    if(value&&typeof value==='object'){
+      for(const [key,child] of Object.entries(value)){
+        if(['__proto__','constructor','prototype'].includes(key))throw Error('Unsafe property in export');
+        pending.push([child,depth+1]);
+      }
+    }
+  }
 }

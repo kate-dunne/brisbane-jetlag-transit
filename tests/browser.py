@@ -5,11 +5,12 @@ with sync_playwright() as p:
     browser=p.chromium.launch(args=['--use-angle=swiftshader','--enable-unsafe-swiftshader'])
     page=browser.new_page(viewport={'width':393,'height':851},device_scale_factor=1,is_mobile=True,has_touch=True)
     errors=[]
-    page.on('pageerror',lambda e: (errors.append(str(e)),print('JS:',e,flush=True)))
+    page.on('console',lambda m: print('Console:',m.text,flush=True) if m.type=='error' else None)
+    page.on('pageerror',lambda e: (errors.append(str(e)),print('JS:',e.stack,flush=True)))
     page.on('requestfailed',lambda r: print('Request failed:',r.url,r.failure,flush=True))
     page.goto(os.environ.get('TEST_URL','http://127.0.0.1:8000'),wait_until='networkidle',timeout=90000)
     print('Page loaded',flush=True)
-    page.wait_for_function("map.getLayer('legal-line') && map.areTilesLoaded()",timeout=90000)
+    page.wait_for_function("() => map.getLayer('legal-line') && map.areTilesLoaded()",timeout=90000)
     page.screenshot(path='/tmp/brisbane-mobile.png')
     page.locator('#menuBtn').click()
     page.locator('[data-layer=intermediate]').check()
@@ -26,13 +27,18 @@ with sync_playwright() as p:
     page.locator('.maplibregl-popup-close-button').first.click()
     fixture={'type':'Feature','properties':{'questions':[{'id':'radius','data':{'lng':153.02,'lat':-27.475,'radius':2,'unit':'kilometers','within':True}}]},'geometry':{'type':'Polygon','coordinates':[[[152.8,-27.8],[153.3,-27.8],[153.3,-27.1],[152.8,-27.1],[152.8,-27.8]]]}}
     page.locator('#fileInput').set_input_files({'name':'fixture.json','mimeType':'application/json','buffer':json.dumps(fixture).encode()})
-    page.wait_for_function('legal!==null')
+    page.wait_for_function('() => legal!==null')
     page.locator('#insideOnly').check()
     page.wait_for_timeout(1000)
     page.screenshot(path='/tmp/brisbane-import.png')
     page.evaluate("""()=>{const area=turf.bboxPolygon([152,-29,154,-26]);const r=parseTaibeled({...area,questions:[{id:'thermometer',data:{lngA:153,latA:-27.5,lngB:153.1,latB:-27.5,warmer:true}}]});if(!turf.booleanPointInPolygon([153.1,-27.5],r.geom)||turf.booleanPointInPolygon([153,-27.5],r.geom))throw Error('Thermometer reversed');const cut=clipTransit(turf.featureCollection([turf.lineString([[0,0],[3,0]])]),turf.bboxPolygon([1,-1,2,1]));if(cut.features.length!==1||Math.abs(cut.features[0].geometry.coordinates[0][0]-1)>1e-6)throw Error('Clipping failed');try{parseTaibeled({})}catch(e){return;}throw Error('Invalid JSON accepted')}""")
+    page.evaluate("""()=>{const text='<img src=x onerror=alert(1)>';const node=document.createElement('div');node.innerHTML=escapeHTML(text);if(node.querySelector('img')||node.textContent!==text)throw Error('Popup injection');for(const bad of [JSON.parse('{"__proto__":{}}'),Array.from({length:50001},()=>0)]){let rejected=false;try{validateImportComplexity(bad)}catch{rejected=true}if(!rejected)throw Error('Unsafe input accepted')}if(localStorage.getItem('jetlagLegalV2'))throw Error('Persistent game state found')}""")
+    assert page.locator('script[integrity]').count()==2
+    assert not page.evaluate('Boolean(map._controls.find(c=>c instanceof maplibregl.AttributionControl))')
+    assert page.locator('#attribution a').count()==3
+    assert page.locator('meta[http-equiv="Content-Security-Policy"]').count()==1
     page.reload(wait_until='networkidle')
-    page.wait_for_function('legal!==null')
+    page.wait_for_function('() => legal!==null')
     page.locator('#menuBtn').click()
     page.locator('#clearBtn').click()
     assert page.evaluate('legal===null')
